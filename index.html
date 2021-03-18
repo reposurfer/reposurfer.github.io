@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stef Boerjan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            padding: 4vh 10vw;
+            color: black;
+            -webkit-font-smoothing: antialiased;
+            font-size: calc(10px + 0.33vw);
+        }
+
+        h1 {
+            font-size: 5em;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: 1.6em;
+            max-width: 28em;
+            font-weight: 300;
+            
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            position: relative;
+        }
+
+        a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 35%;
+            background-color: khaki;
+            z-index: -10;
+            -webkit-transition: all .1s linear;
+            -moz-transition: all .1s linear;
+            transition: all .1s linear;
+        }
+
+        a:hover {
+            cursor: pointer;
+        }
+
+        a:hover::after {
+            height: 100%;
+        }
+    </style>
+    </head>
+<body>
+    <h1>Hello.</h1>
+    <p style="font-weight:bold; font-size: 2.2em;">My name is Stef Boerjan.</h3>
+    <p>I was born in Gent, Belgium and have been living in Lokeren my whole life.</p>
+    <p>I am a second year computer science student at HOGENT.</p>
+    <p>You can follow me on 
+        <a href="https://twitter.com/stefboerjan" target="_blank">Twitter</a>
+        and
+        <a href="https://www.instagram.com/stefboerjan/" target="_blank">Instagram</a>
+        although I don't post much, if anything.
+    </p>
+    <p>
+        You can find me on
+        <a href="https://github.com/reposurfer" target="_blank">GitHub</a>
+        where I try to be as active as I can and also on
+        <a href="https://www.linkedin.com/in/stef-boerjan-4b5737208" target="_blank">LinkedIn</a>.
+    </p>
+    <p>Outside of programming I enjoy spending time with my girlfriend, wasting my life on youtube, watching movies and playing video games in my spare time.</p>
+</body>
+</html>
