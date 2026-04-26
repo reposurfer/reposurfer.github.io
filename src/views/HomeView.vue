@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import Divider from 'primevue/divider'
+import HomeIntro from '@/components/home/HomeIntro.vue'
+import HomeSidebar from '@/components/home/HomeSidebar.vue'
 
 const profile = {
   name: 'Stef',
@@ -58,94 +59,8 @@ const technologySummary =
     <div
       class="grid h-full w-full content-start gap-8 px-6 pt-[14vh] sm:px-10 md:grid-cols-[minmax(0,36rem)_1fr] lg:ml-[7vw] lg:pr-[7vw] xl:ml-[8vw] xl:pr-[8vw]"
     >
-      <section class="min-w-0 max-w-xl" aria-labelledby="intro-title">
-        <h1
-          id="intro-title"
-          class="text-[clamp(3rem,7vw,4.75rem)] font-bold leading-none tracking-normal"
-        >
-          {{ profile.name }}
-        </h1>
-
-        <div class="mt-5 max-w-xl space-y-4 text-base leading-7 text-[#3f3f6d]/80">
-          <p>
-            I am a
-            <span class="font-medium text-[#3f3f6d]">{{ profile.role }}</span>
-            focused on building practical software for the web.
-            {{ profile.summary }}
-          </p>
-
-          <p>
-            Most of my work sits around frontend development, typed JavaScript, and small tools that
-            make everyday workflows cleaner. You can find public work on
-            <a
-              class="bg-linear-to-t from-yellow-200 from-0% to-yellow-200 to-100% font-medium text-[#3f3f6d] no-underline transition-[background-size] duration-200 [background-size:100%_42%] [background-position:0_100%] [background-repeat:no-repeat] hover:[background-size:100%_100%]"
-              :href="profile.github"
-              target="_blank"
-              rel="noopener"
-            >
-              GitHub </a
-            >.
-          </p>
-
-          <p>
-            For contact, send me an
-            <a
-              class="bg-linear-to-t from-yellow-200 from-0% to-yellow-200 to-100% font-medium text-[#3f3f6d] no-underline transition-[background-size] duration-200 [background-size:100%_42%] [background-position:0_100%] [background-repeat:no-repeat] hover:[background-size:100%_100%]"
-              :href="`mailto:${profile.email}`"
-            >
-              email
-            </a>
-            or reach me on
-            <a
-              class="bg-linear-to-t from-yellow-200 from-0% to-yellow-200 to-100% font-medium text-[#3f3f6d] no-underline transition-[background-size] duration-200 [background-size:100%_42%] [background-position:0_100%] [background-repeat:no-repeat] hover:[background-size:100%_100%]"
-              :href="profile.linkedin"
-              target="_blank"
-              rel="noopener"
-            >
-              LinkedIn </a
-            >.
-          </p>
-        </div>
-
-        <p class="mt-6 max-w-xl text-sm leading-6 text-[#3f3f6d]/60">{{ technologySummary }}</p>
-      </section>
-
-      <aside
-        class="w-full max-w-[23rem] min-w-0 justify-self-center text-sm leading-6 text-[#3f3f6d]/80"
-        aria-label="Experience and project links"
-      >
-        <div>
-          <h2 class="text-base font-semibold text-[#3f3f6d]">Experience</h2>
-          <Divider class="my-3" />
-
-          <div class="space-y-4">
-            <article v-for="item in experience" :key="item.title">
-              <p class="font-medium text-[#3f3f6d]">{{ item.title }}</p>
-              <p>{{ item.organization }}</p>
-              <time class="text-xs font-medium uppercase text-[#3f3f6d]/60">{{ item.period }}</time>
-            </article>
-          </div>
-        </div>
-
-        <div class="mt-8">
-          <h2 class="text-base font-semibold text-[#3f3f6d]">Projects</h2>
-          <Divider class="my-3" />
-
-          <div class="space-y-4">
-            <article v-for="project in projects" :key="project.name">
-              <a
-                class="bg-linear-to-t from-yellow-200 from-0% to-yellow-200 to-100% font-medium text-[#3f3f6d] no-underline transition-[background-size] duration-200 [background-size:100%_42%] [background-position:0_100%] [background-repeat:no-repeat] hover:[background-size:100%_100%]"
-                :href="project.link"
-                target="_blank"
-                rel="noopener"
-              >
-                {{ project.name }}
-              </a>
-              <p>{{ project.detail }}</p>
-            </article>
-          </div>
-        </div>
-      </aside>
+      <HomeIntro :profile="profile" :technology-summary="technologySummary" />
+      <HomeSidebar :experience="experience" :projects="projects" />
     </div>
   </main>
 </template>
