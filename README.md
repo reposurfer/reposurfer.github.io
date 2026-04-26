@@ -1,48 +1,86 @@
 # reposurfer.github.io
 
-This template should help get you started developing with Vue 3 in Vite.
+Personal portfolio site, built with Vue, TypeScript, Tailwind CSS, and PrimeVue. The site is intentionally small: a single-page profile with intro copy, experience, project links, and contact links.
 
-## Recommended IDE Setup
+## Tech Stack
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- [Vue 3](https://vuejs.org/) with `<script setup>`
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vite.dev/) for local development and production builds
+- [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
+- [PrimeVue](https://primevue.org/) for UI primitives
+- [Vue Router](https://router.vuejs.org/) for route structure
 
-## Recommended Browser Setup
+## Project Structure
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+```text
+src/
+  assets/
+    main.css
+  components/
+    home/
+      HomeExperienceList.vue
+      HomeHighlightLink.vue
+      HomeIntro.vue
+      HomeProjectList.vue
+      HomeSidebar.vue
+      HomeSidebarSection.vue
+  router/
+    index.ts
+  views/
+    HomeView.vue
+  App.vue
+  main.ts
+```
 
-## Type Support for `.vue` Imports in TS
+## Getting Started
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+Install dependencies:
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Start the local development server:
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Build for production:
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+Preview the production build locally:
 
 ```sh
-npm run lint
+npm run preview
 ```
+
+## Available Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite dev server. |
+| `npm run build` | Type-check and build the app into `dist/`. |
+| `npm run build-only` | Build the app without running the type checker. |
+| `npm run type-check` | Run `vue-tsc` against the project. |
+| `npm run lint` | Run Oxlint and ESLint with auto-fix enabled. |
+| `npm run format` | Format source files with `oxfmt`. |
+| `npm run preview` | Serve the built `dist/` output locally. |
+
+## Deployment
+
+The project includes a GitHub Pages workflow at `.github/workflows/deploy.yml`. On pushes to `main`, GitHub Actions installs dependencies, runs `npm run build`, uploads `dist/`, and deploys it to GitHub Pages.
+
+## Requirements
+
+The project expects Node.js compatible with:
+
+```text
+^20.19.0 || >=22.12.0
+```
+
+Using `npm ci` is recommended in CI because the project includes a `package-lock.json`.
